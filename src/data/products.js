@@ -12,7 +12,7 @@ export const products = [
   {
     "id": 38,
     "name": "Collier Chaîne Cubaine Iced Out",
-    "price": "$579.99",
+    "price": "$479.99",
     "category": "collier",
     "images": ["/uploads/38_0.jpg", "/uploads/38_1.jpg"],
     "description": "Ce collier chaîne cubaine est une pièce emblématique alliant élégance moderne et style audacieux. Conçu avec soin, chaque maillon est serti de pierres étincelantes qui captent la lumière sous tous les angles pour un rendu luxueux et sophistiqué.\n\nSon fermoir pavé de diamants ajoute une touche raffinée tout en assurant une fermeture sûre et discrète. Porté sur un t-shirt noir ou une tenue habillée, il rehausse instantanément le look, affirmant un charisme fort et élégant.",
@@ -32,7 +32,7 @@ export const products = [
   {
     "id": 40,
     "name": "Collier Sphère Iced Out",
-    "price": "$529.99",
+    "price": "$449.99",
     "category": "collier",
     "images": ["/uploads/40_0.jpg", "/uploads/40_1.jpg", "/uploads/40_2.jpg"],
     "description": "Ce collier sphère iced out est une pièce majestueuse qui allie élégance et brillance. Chaque sphère est sertie de cristaux étincelants, créant un effet de lumière captivant sous tous les angles. Parfait pour ajouter une touche de luxe à votre tenue. Ce collier sphère iced out est une pièce majestueuse qui allie élégance et brillance. Chaque sphère est sertie de cristaux étincelants, créant un effet de lumière captivant sous tous les angles. Parfait pour ajouter une touche de luxe à votre tenue.",
@@ -52,7 +52,7 @@ export const products = [
   {
     "id": 44,
     "name": "Collier \"Chaîne Royale\"",
-    "price": "$599.99",
+    "price": "$449.99",
     "category": "collier",
     "images": ["/uploads/44_0.jpg", "/uploads/44_1.jpg"],
     "description": "Ce collier triple rangée incarne l'alliance parfaite entre structure et éclat, pour ceux qui osent afficher leur succès sans un mot. Inspiré des chaînes industrielles revisitées en bijou haut de gamme, son design géométrique et symétrique en fait une pièce aussi imposante qu'élégante.",
@@ -82,7 +82,7 @@ export const products = [
   {
     "id": 47,
     "name": "Collier \"Tennis Chain Arc-en-Ciel",
-    "price": "$119",
+    "price": "$249.99",
     "category": "collier",
     "images": ["/uploads/47_0.jpg", "/uploads/47_1.jpg", "/uploads/47_2.jpg"],
     "description": "Ce collier Tennis Chain triple brin est une explosion de luxe et d'audace, où le traditionnel rencontre l'exceptionnel. Chaque maillon, serti de pierres multicolores , transforme un bijou intemporel en une œuvre d'art portable. Ce n'est pas juste une chaîne : c'est une signature.",
@@ -92,7 +92,7 @@ export const products = [
   {
     "id": 74,
     "name": "Boucles d'Oreilles \"Diamant Souverain\"",
-    "price": "$99",
+    "price": "$99.99",
     "category": "boucle d'oreille",
     "images": ["/uploads/74_0.jpg", "/uploads/74_1.jpg", "/uploads/74_2.jpg", "/uploads/74_3.jpg"],
     "description": "Ces boucles d'oreilles à diamant solitaire incarnent l'élégance intemporelle, avec une touche de puissance discrète. Un diamant brillant rond, serti sur une monture en métal précieux, pour un rendu à la fois classique et audacieux. Elles ne se contentent pas de briller : elles dominent.",
@@ -102,7 +102,7 @@ export const products = [
   {
     "id": 75,
     "name": "Collier \"Cœurs Entrelacés\"",
-    "price": "$679.99",
+    "price": "$599.99",
     "category": "collier",
     "images": ["/uploads/75_0.jpg", "/uploads/75_1.jpg", "/uploads/75_2.jpg"],
     "description": "Ce collier double chaîne en métal précieux est un hommage à l'élégance intemporelle et aux liens indestructibles. Chaque maillon, en forme de cœur ajouré, s'emboîte avec précision pour créer un motif fluide et hypnotique, comme une danse de sentiments.",
@@ -112,7 +112,7 @@ export const products = [
   {
     "id": 76,
     "name": "Bague \"Éternité Celestia\"",
-    "price": "$299",
+    "price": "$299.99",
     "category": "bague",
     "images": ["/uploads/76_0.jpg", "/uploads/76_1.jpg", "/uploads/76_2.jpg"],
     "description": "Cette bague Éternité diamantée se décline en deux versions complémentaires – or blanc et or jaune – pour symboliser l'union des contraires. Avec ses diamants (ou zircons) sertis sur toute la circonférence, elle incarne l'infini : un cercle de lumière qui ne s'interrompt jamais.",
@@ -122,7 +122,7 @@ export const products = [
   {
     "id": 77,
     "name": "Collection \"Géométries Lumineuses\"",
-    "price": "$129",
+    "price": "$119.99 - $249.99",
     "category": "bague",
     "images": ["/uploads/77_0.jpg", "/uploads/77_1.jpg", "/uploads/77_2.jpg", "/uploads/77_3.jpg"],
     "description": "Cette série de quatre bagues asymétriques joue avec les tailles de pierres et les formes géométriques pour créer un effet à la fois artistique et puissant. Chaque modèle est une déclaration : poire, cœur, émeraude et triangle, le tout serti sur des montures fines et élégantes, en métal blanc (argent ou or blanc). Un mélange parfait entre luxe minimaliste et audace contemporaine.",
@@ -132,7 +132,7 @@ export const products = [
   {
     "id": 78,
     "name": "Bague \"Vol de Papillons\"",
-    "price": "$179.99",
+    "price": "$149.99",
     "category": "bague",
     "images": ["/uploads/78_0.jpg", "/uploads/78_1.jpg", "/uploads/78_2.jpg"],
     "description": "Cette bague sculpturale transforme des papillons aux ailes pavées de diamants en une œuvre d'art portable. Chaque détail est pensé pour évoquer la légèreté et la liberté, tout en restant ancré dans un design élégant et sophistiqué. Une pièce pour ceux qui croient que la poésie peut se porter.",
@@ -192,7 +192,7 @@ export const products = [
   {
     "id": 85,
     "name": "Bague \"Fleur de Givre\"",
-    "price": "$449.99",
+    "price": "$349.99",
     "category": "bague",
     "images": ["/uploads/85_0.jpg", "/uploads/85_1.jpg", "/uploads/85_2.jpg", "/uploads/85_3.jpg"],
     "description": "Cette bague cocktail est une symphonie de diamants, où une pierre centrale en forme de coussin est entourée d'une couronne de pétales scintillants, le tout serti sur une monture ouvragée. Chaque détail est conçu pour capter et diffuser la lumière, transformant votre main en un foyer d'éclat. Une pièce majestueuse et intemporelle, parfaite pour les grandes occasions ou pour celles qui aiment porter leur éclat au quotidien.",
@@ -292,7 +292,7 @@ export const products = [
   {
     "id": 95,
     "name": "Pendentif \"Teddy Luxe\"",
-    "price": "$199.99",
+    "price": "$219.99",
     "category": "pendentif",
     "images": ["/uploads/95_0.jpg", "/uploads/95_1.jpg", "/uploads/95_2.jpg", "/uploads/95_3.jpg"],
     "description": "Ce pendentif en forme de nounours assis, entièrement recouvert de diamants est une pièce unique qui allie nostalgie et sophistication. Suspendu à une chaîne dorée, ce bijou est parfait pour celles et ceux qui veulent porter un symbole de douceur et de réconfort avec une touche de glamour étincelant.",
@@ -322,7 +322,7 @@ export const products = [
   {
     "id": 98,
     "name": "Pendentif \"Main de Fatima\"",
-    "price": "$279.99",
+    "price": "$259.99",
     "category": "pendentif",
     "images": ["/uploads/98_0.jpg", "/uploads/98_1.jpg", "/uploads/98_2.jpg"],
     "description": "Ce pendentif en forme de Main de Fatima (ou Khamsa), entièrement recouvert de diamants , est une pièce emblématique qui allie tradition et luxe moderne. Symbole de protection, de chance et de force, ce bijou est parfait pour celles et ceux qui souhaitent porter un talisman puissant tout en affichant un style élégant et sophistiqué.",
@@ -352,7 +352,7 @@ export const products = [
   {
     "id": 101,
     "name": "Pendentif \"Poing d'Argent\" ",
-    "price": "$249.99",
+    "price": "$279.99",
     "category": "pendentif",
     "images": ["/uploads/101_0.jpg", "/uploads/101_1.jpg", "/uploads/101_2.jpg", "/uploads/101_3.jpg"],
     "description": "Ce pendentif en forme de poing serrant un paquet de billets, entièrement recouvert de diamants , est une pièce audacieuse qui allie puissance et luxe. Inspiré de la culture streetwear et du succès, ce bijou est parfait pour celles et ceux qui veulent faire une déclaration forte tout en affichant un style unique et sophistiqué.\n",
@@ -372,7 +372,7 @@ export const products = [
   {
     "id": 103,
     "name": "Pendentif \"Plaque Diamantée\" ",
-    "price": "$349.99",
+    "price": "$379.99",
     "category": "pendentif",
     "images": ["/uploads/103_0.jpg", "/uploads/103_1.jpg", "/uploads/103_2.jpg"],
     "description": "Ce pendentif en forme de plaque rectangulaire gravée et pavée de diamants  est une pièce audacieuse qui allie luxe et culture streetwear. Avec ses lignes épurées et ses détails ouvragés, ce bijou est parfait pour celles et ceux qui veulent faire une déclaration de style forte tout en affichant un luxe discret et sophistiqué.",
@@ -382,7 +382,7 @@ export const products = [
   {
     "id": 104,
     "name": "Bracelet \"Triple Éclat\"",
-    "price": "$299.99",
+    "price": "$279.99",
     "category": "bracelet",
     "images": ["/uploads/104_0.jpg", "/uploads/104_1.jpg", "/uploads/104_2.jpg", "/uploads/104_3.jpg"],
     "description": "Ce bracelet, composé de trois cercles entrelacés pavés de diamants , est une pièce intemporelle qui allie élégance minimaliste et brillance sophistiquée. Son design épuré et ses détails scintillants en font un accessoire polyvalent, parfait pour toutes les occasions, du quotidien aux événements les plus chic.",
@@ -432,7 +432,7 @@ export const products = [
   {
     "id": 109,
     "name": "Bracelet \"Vague de Diamants\" ",
-    "price": "$199.99",
+    "price": "$219.99",
     "category": "bracelet",
     "images": ["/uploads/109_0.jpg", "/uploads/109_1.jpg", "/uploads/109_2.jpg"],
     "description": "Ce bracelet, composé de rangées de diamants  en forme de vagues, est une pièce raffinée et moderne. Chaque segment est méticuleusement serti de pierres scintillantes, créant un effet de mouvement et de brillance. Avec son fermoir sécurisé et élégant, ce bijou est parfait pour ajouter une touche de luxe discret et sophistiqué à n'importe quelle tenue, du quotidien aux événements les plus spéciaux.",
