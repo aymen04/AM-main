@@ -22,12 +22,12 @@ function DiamondModel({ activeStep }) {
 
 export default function Diamond3D({ activeStep }) {
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full min-h-[200px] md:min-h-[300px] lg:min-h-[400px]">
       <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
         <ambientLight intensity={1.2} />
         <directionalLight position={[10, 10, 5]} intensity={2} />
         <pointLight position={[0, 0, 10]} intensity={1} />
-        <Suspense fallback={<Html><div className="flex items-center justify-center h-full text-white">Chargement du modèle 3D...</div></Html>}>
+        <Suspense fallback={<Html><div className="flex items-center justify-center h-full text-white text-sm md:text-base">Chargement du modèle 3D...</div></Html>}>
           <DiamondModel activeStep={activeStep} />
         </Suspense>
         <OrbitControls enableZoom={false} enablePan={false} />

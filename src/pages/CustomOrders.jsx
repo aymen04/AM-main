@@ -43,27 +43,38 @@ export default function CustomOrders() {
     setSubmitStatus('loading');
 
     try {
-      const formDataToSend = new FormData();
-      formDataToSend.append('name', formData.name);
-      formDataToSend.append('email', formData.email);
-      formDataToSend.append('phone', formData.phone);
-      formDataToSend.append('projectType', formData.projectType);
-      formDataToSend.append('budget', formData.budget);
-      formDataToSend.append('description', formData.description);
-      formDataToSend.append('inspiration', formData.inspiration);
-      formDataToSend.append('deadline', formData.deadline);
+      // Prepare message for Telegram
+      const message = `
+🔔 Nouvelle commande personnalisée !
 
-      // Add uploaded images
-      images.forEach((img, index) => {
-        formDataToSend.append('images', img.file);
-      });
+👤 Nom: ${formData.name}
+📧 Email: ${formData.email}
+📱 Téléphone: ${formData.phone}
+💍 Type de projet: ${formData.projectType}
+💰 Budget: ${formData.budget}
+📝 Description: ${formData.description}
+🎨 Inspiration: ${formData.inspiration}
+📅 Délai souhaité: ${formData.deadline}
 
-      const response = await fetch('http://localhost:4000/custom-orders', {
+📎 Images: ${images.length} image(s) uploadée(s)
+      `.trim();
+
+      // Send to Telegram (replace with your bot token and chat ID)
+      const telegramToken = 'YOUR_TELEGRAM_BOT_TOKEN';
+      const chatId = 'YOUR_TELEGRAM_CHAT_ID';
+      const telegramUrl = `https://api.telegram.org/bot${telegramToken}/sendMessage`;
+
+      const response = await fetch(telegramUrl, {
         method: 'POST',
-        body: formDataToSend,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+          parse_mode: 'HTML'
+        }),
       });
-
-      const result = await response.json();
 
       if (response.ok) {
         setSubmitStatus('success');
@@ -81,7 +92,7 @@ export default function CustomOrders() {
         setImages([]);
         setTimeout(() => setSubmitStatus(''), 3000);
       } else {
-        throw new Error(result.error || 'Erreur lors de l\'envoi');
+        throw new Error('Erreur lors de l\'envoi à Telegram');
       }
     } catch (error) {
       console.error('Erreur:', error);
@@ -139,35 +150,35 @@ export default function CustomOrders() {
     <div className="min-h-screen pt-32 pb-24 bg-black">
       <div className="container mx-auto px-6">
         {/* Hero Section */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 md:mb-20">
           <div className="inline-block mb-6">
-            <Sparkles className="text-[#ebc280] mx-auto" size={48} />
+            <Sparkles className="text-[#ebc280] mx-auto" size={40} md:size={48} />
           </div>
-          <h1 className="text-5xl md:text-7xl font-light tracking-widest text-[#ebc280] mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-widest text-[#ebc280] mb-4 md:mb-6">
             CRÉATIONS SUR MESURE
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Transformez votre vision en réalité. Nous créons des bijoux uniques qui racontent votre histoire, 
+          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4">
+            Transformez votre vision en réalité. Nous créons des bijoux uniques qui racontent votre histoire,
             conçus exclusivement pour vous avec des pierres précieuses d'exception.
           </p>
         </div>
 
         {/* 3D Diamond Animation - Fixed below header */}
-        <div className="fixed top-32 right-8 z-50 w-64 h-64 pointer-events-none">
+        <div className="fixed top-32 right-4 md:right-8 z-50 w-48 h-48 md:w-64 md:h-64 pointer-events-none">
           <Diamond3D activeStep={activeStep} />
         </div>
 
         {/* Process Steps */}
-        <div className="mb-24">
-          <h2 className="text-4xl font-light tracking-widest text-center text-white mb-16">
+        <div className="mb-16 md:mb-24">
+          <h2 className="text-3xl md:text-4xl font-light tracking-widest text-center text-white mb-12 md:mb-16">
             NOTRE PROCESSUS DE CRÉATION
           </h2>
-          
-          <div className="max-w-7xl mx-auto space-y-16">
+
+          <div className="max-w-7xl mx-auto space-y-12 md:space-y-16">
             {processSteps.map((step, index) => (
               <div
                 key={index}
-                className={`process-step flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-12 items-center ${index === activeStep ? 'ring-2 ring-[#ebc280]/50 shadow-lg shadow-[#ebc280]/10' : ''} transition-all duration-500`}
+                className={`process-step flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 md:gap-12 items-center ${index === activeStep ? 'ring-2 ring-[#ebc280]/50 shadow-lg shadow-[#ebc280]/10' : ''} transition-all duration-500`}
               >
                 {/* Image */}
                 <div className="w-full md:w-1/2 relative group">
@@ -187,16 +198,17 @@ export default function CustomOrders() {
                 </div>
 
                 {/* Content */}
-                <div className="w-full md:w-1/2 space-y-4">
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-full bg-[#ebc280]/10 border border-[#ebc280]/30 flex items-center justify-center">
-                      <step.icon className="text-[#ebc280]" size={28} />
+                <div className="w-full lg:w-1/2 space-y-4 md:space-y-6">
+                  <div className="flex items-center gap-3 md:gap-4">
+                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#ebc280]/10 border border-[#ebc280]/30 flex items-center justify-center">
+                      <step.icon className="text-[#ebc280]" size={24} md:size={28} />
                     </div>
-                    <h3 className="text-3xl font-light tracking-wide text-[#ebc280]">
-                      {step.title}
-                    </h3>
+                    <div>
+                      <h3 className="text-xl md:text-2xl lg:text-3xl font-light tracking-wide text-[#ebc280]">{step.title}</h3>
+                      <p className="text-[#ebc280] text-xs md:text-sm tracking-widest">ÉTAPE {index + 1}</p>
+                    </div>
                   </div>
-                  <p className="text-gray-300 text-lg leading-relaxed">
+                  <p className="text-gray-300 leading-relaxed text-base md:text-lg">
                     {step.description}
                   </p>
                 </div>
@@ -206,19 +218,19 @@ export default function CustomOrders() {
         </div>
 
         {/* Formulaire */}
-        <div className="max-w-4xl mx-auto bg-zinc-900 rounded-2xl border border-[#ebc280]/20 p-8 md:p-12">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-light tracking-widest text-[#ebc280] mb-4">
+        <div className="max-w-4xl mx-auto bg-zinc-900 rounded-2xl border border-[#ebc280]/20 p-6 md:p-8 lg:p-12">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-3xl md:text-4xl font-light tracking-widest text-[#ebc280] mb-4">
               DÉMARREZ VOTRE PROJET
             </h2>
-            <p className="text-gray-400">
+            <p className="text-gray-400 text-sm md:text-base">
               Remplissez ce formulaire et nous vous contacterons sous 24h pour discuter de votre création unique.
             </p>
           </div>
 
           <div className="space-y-8">
             {/* Informations personnelles */}
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <div>
                 <label className="block text-gray-300 text-sm mb-2 tracking-wide">Nom complet *</label>
                 <input
@@ -227,7 +239,7 @@ export default function CustomOrders() {
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
                   placeholder="Votre nom"
-                  className="w-full bg-black border border-zinc-700 text-white px-6 py-4 rounded-lg focus:outline-none focus:border-[#ebc280] transition-colors"
+                  className="w-full bg-black border border-zinc-700 text-white px-4 md:px-6 py-3 md:py-4 rounded-lg focus:outline-none focus:border-[#ebc280] transition-colors text-sm md:text-base"
                 />
               </div>
               <div>
@@ -238,12 +250,12 @@ export default function CustomOrders() {
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
                   placeholder="votre@email.com"
-                  className="w-full bg-black border border-zinc-700 text-white px-6 py-4 rounded-lg focus:outline-none focus:border-[#ebc280] transition-colors"
+                  className="w-full bg-black border border-zinc-700 text-white px-4 md:px-6 py-3 md:py-4 rounded-lg focus:outline-none focus:border-[#ebc280] transition-colors text-sm md:text-base"
                 />
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <div>
                 <label className="block text-gray-300 text-sm mb-2 tracking-wide">Téléphone</label>
                 <input
@@ -251,7 +263,7 @@ export default function CustomOrders() {
                   value={formData.phone}
                   onChange={(e) => setFormData({...formData, phone: e.target.value})}
                   placeholder="+00 00 00 00 00"
-                  className="w-full bg-black border border-zinc-700 text-white px-6 py-4 rounded-lg focus:outline-none focus:border-[#ebc280] transition-colors"
+                  className="w-full bg-black border border-zinc-700 text-white px-4 md:px-6 py-3 md:py-4 rounded-lg focus:outline-none focus:border-[#ebc280] transition-colors text-sm md:text-base"
                 />
               </div>
               <div>
@@ -260,7 +272,7 @@ export default function CustomOrders() {
                   required
                   value={formData.projectType}
                   onChange={(e) => setFormData({...formData, projectType: e.target.value})}
-                  className="w-full bg-black border border-zinc-700 text-white px-6 py-4 rounded-lg focus:outline-none focus:border-[#ebc280] transition-colors"
+                  className="w-full bg-black border border-zinc-700 text-white px-4 md:px-6 py-3 md:py-4 rounded-lg focus:outline-none focus:border-[#ebc280] transition-colors text-sm md:text-base"
                 >
                   <option value="">Sélectionner...</option>
                   <option value="collier">Collier</option>
@@ -273,13 +285,13 @@ export default function CustomOrders() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <div>
                 <label className="block text-gray-300 text-sm mb-2 tracking-wide">Budget estimé</label>
                 <select
                   value={formData.budget}
                   onChange={(e) => setFormData({...formData, budget: e.target.value})}
-                  className="w-full bg-black border border-zinc-700 text-white px-6 py-4 rounded-lg focus:outline-none focus:border-[#ebc280] transition-colors"
+                  className="w-full bg-black border border-zinc-700 text-white px-4 md:px-6 py-3 md:py-4 rounded-lg focus:outline-none focus:border-[#ebc280] transition-colors text-sm md:text-base"
                 >
                   <option value="">Sélectionner...</option>
                   <option value="500-1000">500$ - 1000$</option>
@@ -295,7 +307,7 @@ export default function CustomOrders() {
                   type="date"
                   value={formData.deadline}
                   onChange={(e) => setFormData({...formData, deadline: e.target.value})}
-                  className="w-full bg-black border border-zinc-700 text-white px-6 py-4 rounded-lg focus:outline-none focus:border-[#ebc280] transition-colors"
+                  className="w-full bg-black border border-zinc-700 text-white px-4 md:px-6 py-3 md:py-4 rounded-lg focus:outline-none focus:border-[#ebc280] transition-colors text-sm md:text-base"
                 />
               </div>
             </div>
@@ -307,8 +319,8 @@ export default function CustomOrders() {
                 value={formData.description}
                 onChange={(e) => setFormData({...formData, description: e.target.value})}
                 placeholder="Décrivez votre vision : type de bijou, pierres souhaitées, occasion, style..."
-                rows="5"
-                className="w-full bg-black border border-zinc-700 text-white px-6 py-4 rounded-lg focus:outline-none focus:border-[#ebc280] transition-colors resize-none"
+                rows="4"
+                className="w-full bg-black border border-zinc-700 text-white px-4 md:px-6 py-3 md:py-4 rounded-lg focus:outline-none focus:border-[#ebc280] transition-colors resize-none text-sm md:text-base"
               ></textarea>
             </div>
 
@@ -319,7 +331,7 @@ export default function CustomOrders() {
                 onChange={(e) => setFormData({...formData, inspiration: e.target.value})}
                 placeholder="Partagez des références, styles, ou bijoux qui vous inspirent..."
                 rows="3"
-                className="w-full bg-black border border-zinc-700 text-white px-6 py-4 rounded-lg focus:outline-none focus:border-[#ebc280] transition-colors resize-none"
+                className="w-full bg-black border border-zinc-700 text-white px-4 md:px-6 py-3 md:py-4 rounded-lg focus:outline-none focus:border-[#ebc280] transition-colors resize-none text-sm md:text-base"
               ></textarea>
             </div>
 
@@ -368,7 +380,7 @@ export default function CustomOrders() {
             <button
               onClick={handleSubmit}
               disabled={submitStatus === 'loading'}
-              className="w-full py-5 bg-[#ebc280] text-black hover:bg-[#d4a860] transition-all duration-300 tracking-widest text-sm font-bold rounded-lg flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full py-4 md:py-5 bg-[#ebc280] text-black hover:bg-[#d4a860] transition-all duration-300 tracking-widest text-sm font-bold rounded-lg flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed min-h-[48px]"
             >
               {submitStatus === 'loading' ? (
                 <>
@@ -407,7 +419,7 @@ export default function CustomOrders() {
         </div>
 
         {/* FAQ ou Garanties */}
-        <div className="max-w-4xl mx-auto mt-20 grid md:grid-cols-3 gap-8">
+        <div className="max-w-4xl mx-auto mt-12 md:mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           <div className="text-center p-6 bg-zinc-900/50 rounded-lg border border-zinc-800">
             <div className="w-12 h-12 rounded-full bg-[#ebc280]/10 border border-[#ebc280]/30 flex items-center justify-center mx-auto mb-4">
               <CheckCircle className="text-[#ebc280]" size={24} />

@@ -65,7 +65,7 @@ export default function CategoryCarousel3D() {
     const totalCards = categories.length;
     
     const angle = (position / totalCards) * Math.PI * 2;
-    const radius = 280;
+    const radius = window.innerWidth < 768 ? 180 : window.innerWidth < 1024 ? 220 : 280;
     const x = Math.sin(angle) * radius;
     const z = Math.cos(angle) * radius;
     const rotateY = (angle * 180) / Math.PI;
@@ -98,23 +98,23 @@ export default function CategoryCarousel3D() {
   };
 
   return (
-    <section className="py-32 bg-black relative overflow-hidden">
+    <section className="py-16 md:py-24 lg:py-32 bg-black relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-radial from-[#ebc280]/10 via-transparent to-transparent opacity-30"></div>
-      
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-light tracking-widest text-[#ebc280] mb-6">
+
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="text-center mb-12 md:mb-16 lg:mb-20">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light tracking-widest text-[#ebc280] mb-4 md:mb-6">
             MAGASINER PAR CATÉGORIE
           </h2>
-          <p className="text-gray-400 text-lg tracking-wide">
+          <p className="text-gray-400 text-base md:text-lg tracking-wide">
             Explorez notre collection par type de bijou
           </p>
         </div>
 
-        <div className="relative h-[600px] flex items-center justify-center">
-          <div 
+        <div className="relative h-[400px] md:h-[500px] lg:h-[600px] flex items-center justify-center">
+          <div
             className="relative w-full h-full"
-            style={{ perspective: '1200px' }}
+            style={{ perspective: '800px' }}
             onMouseEnter={() => setIsAutoRotating(false)}
             onMouseLeave={() => setIsAutoRotating(true)}
           >
@@ -134,7 +134,7 @@ export default function CategoryCarousel3D() {
                     }}
                     onClick={() => handleCardClick(category, isCurrent)}
                   >
-                    <div className="relative w-[380px] h-[480px] group">
+                    <div className="relative w-[280px] md:w-[320px] lg:w-[380px] h-[360px] md:h-[420px] lg:h-[480px] group">
                       <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-[#ebc280]/20 bg-zinc-900">
                         <div className="absolute inset-0">
                           <img 
@@ -145,20 +145,20 @@ export default function CategoryCarousel3D() {
                           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
                         </div>
 
-                        <div className="absolute inset-0 flex flex-col justify-end p-8">
+                        <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-6 lg:p-8">
                           <div className="transform transition-transform duration-300 group-hover:translate-y-[-10px]">
-                            <p className="text-[#ebc280] text-sm tracking-widest mb-2 uppercase">
+                            <p className="text-[#ebc280] text-xs md:text-sm tracking-widest mb-2 uppercase">
                               {category.count}
                             </p>
-                            <h3 className="text-4xl font-light tracking-wide text-white mb-3">
+                            <h3 className="text-2xl md:text-3xl lg:text-4xl font-light tracking-wide text-white mb-2 md:mb-3">
                               {category.name}
                             </h3>
-                            <p className="text-gray-300 text-sm mb-6 tracking-wide">
+                            <p className="text-gray-300 text-xs md:text-sm mb-4 md:mb-6 tracking-wide">
                               {category.description}
                             </p>
                             
                             {isCurrent && (
-                              <button className="inline-block px-8 py-3 border-2 border-[#ebc280] text-[#ebc280] hover:bg-[#ebc280] hover:text-black transition-all duration-300 tracking-widest text-xs opacity-0 group-hover:opacity-100">
+                              <button className="inline-block px-6 md:px-8 py-2 md:py-3 border-2 border-[#ebc280] text-[#ebc280] hover:bg-[#ebc280] hover:text-black transition-all duration-300 tracking-widest text-xs opacity-0 group-hover:opacity-100 min-h-[44px] flex items-center">
                                 DÉCOUVRIR
                               </button>
                             )}
@@ -182,20 +182,20 @@ export default function CategoryCarousel3D() {
 
           <button
             onClick={prev}
-            className="absolute left-4 md:left-12 top-1/2 transform -translate-y-1/2 z-20 w-14 h-14 rounded-full border-2 border-[#ebc280] text-[#ebc280] hover:bg-[#ebc280] hover:text-black transition-all duration-300 flex items-center justify-center backdrop-blur-sm bg-black/30"
+            className="absolute left-2 md:left-4 lg:left-12 top-1/2 transform -translate-y-1/2 z-20 w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-[#ebc280] text-[#ebc280] hover:bg-[#ebc280] hover:text-black transition-all duration-300 flex items-center justify-center backdrop-blur-sm bg-black/30 min-h-[44px]"
           >
-            <ChevronLeft size={28} />
+            <ChevronLeft size={20} md:size={28} />
           </button>
-          
+
           <button
             onClick={next}
-            className="absolute right-4 md:right-12 top-1/2 transform -translate-y-1/2 z-20 w-14 h-14 rounded-full border-2 border-[#ebc280] text-[#ebc280] hover:bg-[#ebc280] hover:text-black transition-all duration-300 flex items-center justify-center backdrop-blur-sm bg-black/30"
+            className="absolute right-2 md:right-4 lg:right-12 top-1/2 transform -translate-y-1/2 z-20 w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-[#ebc280] text-[#ebc280] hover:bg-[#ebc280] hover:text-black transition-all duration-300 flex items-center justify-center backdrop-blur-sm bg-black/30 min-h-[44px]"
           >
-            <ChevronRight size={28} />
+            <ChevronRight size={20} md:size={28} />
           </button>
         </div>
 
-        <div className="flex justify-center gap-3 mt-12">
+        <div className="flex justify-center gap-2 md:gap-3 mt-8 md:mt-12">
           {categories.map((_, index) => (
             <button
               key={index}
@@ -203,17 +203,17 @@ export default function CategoryCarousel3D() {
                 setCurrentIndex(index);
                 setIsAutoRotating(false);
               }}
-              className={`transition-all duration-300 rounded-full ${
+              className={`transition-all duration-300 rounded-full min-h-[44px] flex items-center ${
                 index === currentIndex
-                  ? 'w-12 h-3 bg-[#ebc280]'
-                  : 'w-3 h-3 bg-[#ebc280]/30 hover:bg-[#ebc280]/60'
+                  ? 'w-8 md:w-12 h-2 md:h-3 bg-[#ebc280]'
+                  : 'w-2 md:w-3 h-2 md:h-3 bg-[#ebc280]/30 hover:bg-[#ebc280]/60'
               }`}
             />
           ))}
         </div>
 
-        <div className="text-center mt-8">
-          <p className="text-gray-500 text-sm tracking-wide">
+        <div className="text-center mt-6 md:mt-8">
+          <p className="text-gray-500 text-xs md:text-sm tracking-wide">
             {isAutoRotating ? '⟳ Rotation automatique' : 'Pause - Survolez pour explorer'}
           </p>
         </div>

@@ -68,22 +68,22 @@ export default function App() {
             <>
               {/* HERO AVEC VIDÉO */}
               <div className="relative h-screen overflow-hidden">
-                <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-60 -translate-y-12">
+                <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-60">
                   <source src={video} type="video/mp4" />
                 </video>
-                
-                
+
+
                 <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black"></div>
-                
+
                 <div className="relative h-full flex items-center justify-center text-center px-6">
-                  <div className="max-w-4xl space-y-8 animate-fade-in">
-                    <h1 className="text-5xl md:text-7xl font-light tracking-widest text-white mb-6">
+                  <div className="max-w-4xl space-y-6 animate-fade-in">
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-widest text-white mb-4">
                       ÉLÉGANCE NATURELLE
                     </h1>
-                    <p className="text-xl md:text-2xl text-[#ebc280] font-light tracking-wide">
+                    <p className="text-lg sm:text-xl md:text-2xl text-[#ebc280] font-light tracking-wide">
                       Collection de bijoux en pierres précieuses
                     </p>
-                    <Link to="/boutique" className="mt-12 px-12 py-4 bg-transparent border-2 border-[#ebc280] text-[#ebc280] hover:bg-[#ebc280] hover:text-black transition-all duration-300 tracking-widest text-sm inline-block">
+                    <Link to="/boutique" className="mt-8 px-8 py-3 bg-transparent border-2 border-[#ebc280] text-[#ebc280] hover:bg-[#ebc280] hover:text-black transition-all duration-300 tracking-widest text-sm inline-block">
                       DÉCOUVRIR LA COLLECTION
                     </Link>
                   </div>
@@ -99,7 +99,7 @@ export default function App() {
                   {loading ? (
                     <div className="text-center text-[#ebc280]">Chargement...</div>
                   ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                       {products.slice(0, 6).map(product => (
                         <div key={product.id} className="group cursor-pointer">
                           <div className="relative overflow-hidden mb-4 aspect-square">
@@ -110,8 +110,8 @@ export default function App() {
                             />
                             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                           </div>
-                          <h3 className="text-xl font-light tracking-wide text-white mb-2">{product.name}</h3>
-                          <p className="text-[#ebc280] text-lg">{product.price}</p>
+                          <h3 className="text-lg md:text-xl font-light tracking-wide text-white mb-2">{product.name}</h3>
+                          <p className="text-[#ebc280] text-base md:text-lg">{product.price}</p>
                         </div>
                       ))}
                     </div>
@@ -135,11 +135,11 @@ export default function App() {
         </Routes>
 
         {/* FOOTER */}
-        <footer className="bg-zinc-950 border-t border-zinc-800 py-16">
+        <footer className="bg-zinc-950 border-t border-zinc-800 py-12 md:py-16">
           <div className="container mx-auto px-6">
-            <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
               {/* Brand */}
-              <div className="md:col-span-1">
+              <div className="sm:col-span-2 lg:col-span-1">
                 <div className="text-2xl font-light tracking-widest text-[#ebc280] mb-4">
                   AM
                 </div>
@@ -192,7 +192,7 @@ export default function App() {
             </div>
 
             {/* Copyright */}
-            <div className="border-t border-zinc-800 pt-8 text-center">
+            <div className="border-t border-zinc-800 pt-6 md:pt-8 text-center">
               <p className="text-gray-400 text-sm tracking-wide">
                 <span
                   className="cursor-pointer"
@@ -202,7 +202,7 @@ export default function App() {
                 >
                   ©   </span>
                 {' '}2025 AM
-              
+
                 Tous droits réservés. Créations artisanales de haute joaillerie.
               </p>
             </div>

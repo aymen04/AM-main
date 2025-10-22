@@ -75,8 +75,8 @@ export default function Boutique({ products }) {
         </div>
 
         <div className="max-w-6xl mx-auto mb-12">
-          <div className="flex flex-col md:flex-row gap-6 items-center">
-            <div className="flex-1 w-full relative">
+          <div className="flex flex-col gap-6">
+            <div className="w-full relative">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
               <input
                 type="text"
@@ -90,7 +90,7 @@ export default function Boutique({ products }) {
               />
             </div>
 
-            <div className="flex items-center gap-2 overflow-x-auto w-full md:w-auto">
+            <div className="flex items-center gap-2 overflow-x-auto pb-2">
               <Filter className="text-gray-400 flex-shrink-0" size={20} />
               {categories.map(cat => (
                 <button
@@ -99,7 +99,7 @@ export default function Boutique({ products }) {
                     setSelectedCategory(cat);
                     setCurrentPage(1);
                   }}
-                  className={`px-6 py-3 rounded-lg whitespace-nowrap transition-all duration-300 ${
+                  className={`px-4 py-2 text-sm rounded-lg whitespace-nowrap transition-all duration-300 min-h-[44px] ${
                     selectedCategory === cat
                       ? 'bg-[#ebc280] text-black font-medium'
                       : 'bg-zinc-900 text-gray-300 border border-zinc-700 hover:border-[#ebc280]/50'
@@ -111,7 +111,7 @@ export default function Boutique({ products }) {
             </div>
           </div>
 
-          <div className="text-center mt-6 text-gray-400">
+          <div className="text-center mt-6 text-gray-400 text-sm">
             {filteredProducts.length} produit{filteredProducts.length > 1 ? 's' : ''} trouvé{filteredProducts.length > 1 ? 's' : ''}
             {totalPages > 1 && ` (Page ${currentPage} sur ${totalPages})`}
           </div>
@@ -125,7 +125,7 @@ export default function Boutique({ products }) {
           </div>
         ) : (
           <>
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto">
               {paginatedProducts.map(product => (
                 <Link 
                   to={`/product/${product.id}`} 
@@ -148,19 +148,19 @@ export default function Boutique({ products }) {
                       )}
 
                       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
-                        <button className="px-6 py-3 bg-[#ebc280] text-black hover:bg-[#d4a860] transition-colors rounded-lg flex items-center gap-2 text-sm font-medium tracking-wide">
+                        <button className="px-4 py-2 bg-[#ebc280] text-black hover:bg-[#d4a860] transition-colors rounded-lg flex items-center gap-2 text-sm font-medium tracking-wide min-h-[44px]">
                           <ShoppingBag size={16} />
                           Voir le produit
                         </button>
                       </div>
                     </div>
 
-                    <div className="p-5">
-                      <h3 className="text-lg font-light tracking-wide text-white mb-2 group-hover:text-[#ebc280] transition-colors line-clamp-2">
+                    <div className="p-4 md:p-5">
+                      <h3 className="text-base md:text-lg font-light tracking-wide text-white mb-2 group-hover:text-[#ebc280] transition-colors line-clamp-2">
                         {product.name}
                       </h3>
                       <div className="flex items-center justify-between">
-                        <p className="text-[#ebc280] text-xl font-medium">{product.price}</p>
+                        <p className="text-[#ebc280] text-lg md:text-xl font-medium">{product.price}</p>
                       </div>
                     </div>
                   </div>
@@ -169,17 +169,17 @@ export default function Boutique({ products }) {
             </div>
 
             {totalPages > 1 && (
-              <div className="flex justify-center items-center gap-4 mt-16">
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12 md:mt-16">
                 <button
                   onClick={() => handlePageChange(currentPage - 1)}
                   disabled={currentPage === 1}
-                  className="px-4 py-2 bg-zinc-900 border border-zinc-700 text-gray-300 rounded-lg hover:border-[#ebc280] hover:text-[#ebc280] disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                  className="px-4 py-3 bg-zinc-900 border border-zinc-700 text-gray-300 rounded-lg hover:border-[#ebc280] hover:text-[#ebc280] disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2 min-h-[44px] text-sm"
                 >
                   <ChevronLeft size={16} />
                   Précédent
                 </button>
 
-                <div className="flex gap-2">
+                <div className="flex gap-2 overflow-x-auto">
                   {Array.from({ length: Math.min(totalPages, 5) }, (_, i) => {
                     let page;
                     if (totalPages <= 5) {
@@ -191,12 +191,12 @@ export default function Boutique({ products }) {
                     } else {
                       page = currentPage - 2 + i;
                     }
-                    
+
                     return (
                       <button
                         key={page}
                         onClick={() => handlePageChange(page)}
-                        className={`px-4 py-2 rounded-lg transition-colors ${
+                        className={`px-4 py-3 rounded-lg transition-colors min-h-[44px] min-w-[44px] ${
                           currentPage === page
                             ? 'bg-[#ebc280] text-black'
                             : 'bg-zinc-900 border border-zinc-700 text-gray-300 hover:border-[#ebc280] hover:text-[#ebc280]'
@@ -211,7 +211,7 @@ export default function Boutique({ products }) {
                 <button
                   onClick={() => handlePageChange(currentPage + 1)}
                   disabled={currentPage === totalPages}
-                  className="px-4 py-2 bg-zinc-900 border border-zinc-700 text-gray-300 rounded-lg hover:border-[#ebc280] hover:text-[#ebc280] disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                  className="px-4 py-3 bg-zinc-900 border border-zinc-700 text-gray-300 rounded-lg hover:border-[#ebc280] hover:text-[#ebc280] disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2 min-h-[44px] text-sm"
                 >
                   Suivant
                   <ChevronRight size={16} />

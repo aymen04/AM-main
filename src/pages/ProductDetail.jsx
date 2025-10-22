@@ -46,7 +46,7 @@ export default function ProductDetail({ products }) {
           <span className="text-[#ebc280]">{product.category || 'Produit'}</span>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 max-w-7xl mx-auto">
           {/* Galerie d'images */}
           <div className="space-y-6">
             {/* Image principale */}
@@ -111,7 +111,7 @@ export default function ProductDetail({ products }) {
             )}
 
             {/* Titre */}
-            <h1 className="text-5xl font-light tracking-wide text-white leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-wide text-white leading-tight">
               {product.name}
             </h1>
 
@@ -126,11 +126,11 @@ export default function ProductDetail({ products }) {
             </div>
 
             {/* Prix */}
-            <div className="py-6 border-y border-zinc-800">
-              <div className="text-5xl font-light text-[#ebc280]">
+            <div className="py-4 md:py-6 border-y border-zinc-800">
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#ebc280]">
                 {product.price}
               </div>
-              <p className="text-gray-400 mt-2">TVA incluse • Livraison gratuite</p>
+              <p className="text-gray-400 mt-2 text-sm md:text-base">TVA incluse • Livraison gratuite</p>
             </div>
 
             {/* Description */}
@@ -186,15 +186,15 @@ export default function ProductDetail({ products }) {
 
             {/* Actions */}
             <div className="space-y-4">
-              <button className="w-full py-5 bg-[#ebc280] text-black hover:bg-[#d4a860] transition-all duration-300 tracking-widest text-sm font-medium flex items-center justify-center gap-3 rounded-lg">
+              <button className="w-full py-4 md:py-5 bg-[#ebc280] text-black hover:bg-[#d4a860] transition-all duration-300 tracking-widest text-sm font-medium flex items-center justify-center gap-3 rounded-lg min-h-[48px]">
                 <ShoppingBag size={20} />
                 AJOUTER AU PANIER
               </button>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3 md:gap-4">
                 <button
                   onClick={() => setIsFavorite(!isFavorite)}
-                  className={`py-4 border-2 transition-all duration-300 tracking-widest text-sm font-medium flex items-center justify-center gap-2 rounded-lg ${
+                  className={`py-3 md:py-4 border-2 transition-all duration-300 tracking-widest text-sm font-medium flex items-center justify-center gap-2 rounded-lg min-h-[44px] ${
                     isFavorite
                       ? 'border-red-500 text-red-500 bg-red-500/10'
                       : 'border-[#ebc280] text-[#ebc280] hover:bg-[#ebc280] hover:text-black'
@@ -204,7 +204,7 @@ export default function ProductDetail({ products }) {
                   {isFavorite ? 'FAVORI' : 'FAVORIS'}
                 </button>
 
-                <button className="py-4 border-2 border-[#ebc280] text-[#ebc280] hover:bg-[#ebc280] hover:text-black transition-all duration-300 tracking-widest text-sm font-medium flex items-center justify-center gap-2 rounded-lg">
+                <button className="py-3 md:py-4 border-2 border-[#ebc280] text-[#ebc280] hover:bg-[#ebc280] hover:text-black transition-all duration-300 tracking-widest text-sm font-medium flex items-center justify-center gap-2 rounded-lg min-h-[44px]">
                   <Share2 size={20} />
                   PARTAGER
                 </button>
