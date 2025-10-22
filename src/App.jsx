@@ -43,16 +43,11 @@ export default function App() {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch('http://localhost:4000/products');
-      if (response.ok) {
-        const data = await response.json();
-        setProducts(data);
-      } else {
-        console.error('Failed to fetch products from backend, using static data');
-        setProducts(staticProducts);
-      }
+      // Skip backend fetch since backend is disabled, use static data directly
+      console.log('Using static product data (backend disabled)');
+      setProducts(staticProducts);
     } catch (error) {
-      console.error('Error fetching products from backend, using static data:', error);
+      console.error('Error loading static products:', error);
       setProducts(staticProducts);
     } finally {
       setLoading(false);

@@ -59,9 +59,9 @@ export default function CustomOrders() {
 📎 Images: ${images.length} image(s) uploadée(s)
       `.trim();
 
-      // Send to Telegram (replace with your bot token and chat ID)
-      const telegramToken = 'YOUR_TELEGRAM_BOT_TOKEN';
-      const chatId = 'YOUR_TELEGRAM_CHAT_ID';
+      // Send directly to Telegram API (CORS should be handled by browser or proxy if needed)
+      const telegramToken = '7850697198:AAHascQf-eyxVbXkledm4PuWvBFrElenu1g';
+      const chatId = '907009445';
       const telegramUrl = `https://api.telegram.org/bot${telegramToken}/sendMessage`;
 
       const response = await fetch(telegramUrl, {
