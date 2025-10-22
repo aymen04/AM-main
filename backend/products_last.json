@@ -1,0 +1,75 @@
+[
+  {
+    "id": 106,
+    "name": "Bracelets \"Lien Éternel\" ",
+    "price": "$119.99",
+    "category": "bracelet",
+    "images": [
+      "106_0.jpg",
+      "106_1.jpg",
+      "106_2.jpg",
+      "106_3.jpg",
+      "106_4.jpg"
+    ],
+    "description": "Ces bracelets, composés d'une chaîne fine ornée d'un anneau ovale pavé de diamants , sont des pièces délicates et symboliques. Disponibles en trois couleurs de métal (or jaune, or blanc et or rose), ils représentent l'unité, l'amour et les liens éternels. Leur design épuré et leur éclat discret en font des accessoires polyvalents, parfaits pour toutes les occasions, du quotidien aux événements les plus spéciaux.",
+    "stock": null,
+    "created_at": "2025-10-13T21:16:42.000Z"
+  },
+  {
+    "id": 107,
+    "name": "Bracelet \"Cœurs Entrelaçés\"",
+    "price": "$399.99",
+    "category": "bracelet",
+    "images": [
+      "107_0.jpg",
+      "107_1.jpg",
+      "107_2.jpg"
+    ],
+    "description": "Ce bracelet, composé de cœurs pavés de diamants  reliés entre eux, est une pièce romantique et sophistiquée. Chaque cœur, méticuleusement serti de pierres étincelantes, symbolise l'amour, l'amitié ou les liens précieux. Avec son fermoir sécurisé et élégant, ce bijou est parfait pour toutes les occasions, du quotidien aux événements les plus spéciaux.",
+    "stock": null,
+    "created_at": "2025-10-13T21:17:26.000Z"
+  },
+  {
+    "id": 108,
+    "name": "Bracelet \"Luxe Urbain\"",
+    "price": "$499.99",
+    "category": "bracelet",
+    "images": [
+      "108_0.jpg",
+      "108_1.jpg",
+      "108_2.jpg"
+    ],
+    "description": "Ces bracelets en mailles articulées pavées de diamants  sont des pièces audacieuses qui marient style urbain et sophistication. Chaque segment est recouvert de pierres scintillantes, créant un effet de luxe discret mais percutant. Disponibles en or jaune et en argent (ou or blanc), ils sont parfaits pour ajouter une touche de brillance et de caractère à n'importe quelle tenue, du casual au chic.",
+    "stock": null,
+    "created_at": "2025-10-13T21:18:36.000Z"
+  },
+  {
+    "id": 109,
+    "name": "Bracelet \"Vague de Diamants\" ",
+    "price": "$199.99",
+    "category": "bracelet",
+    "images": [
+      "109_0.jpg",
+      "109_1.jpg",
+      "109_2.jpg"
+    ],
+    "description": "Ce bracelet, composé de rangées de diamants  en forme de vagues, est une pièce raffinée et moderne. Chaque segment est méticuleusement serti de pierres scintillantes, créant un effet de mouvement et de brillance. Avec son fermoir sécurisé et élégant, ce bijou est parfait pour ajouter une touche de luxe discret et sophistiqué à n'importe quelle tenue, du quotidien aux événements les plus spéciaux.",
+    "stock": null,
+    "created_at": "2025-10-13T21:19:28.000Z"
+  },
+  {
+    "id": 110,
+    "name": "Bracelet \"Chaîne de l'Infini\"",
+    "price": "$349.99",
+    "category": "bracelet",
+    "images": [
+      "110_0.jpg",
+      "110_1.jpg",
+      "110_2.jpg",
+      "110_3.jpg"
+    ],
+    "description": "Ce bracelet, composé de maillons ovales entrelacés et pavés de diamants , est une pièce audacieuse et sophistiquée. Chaque maillon, méticuleusement serti de pierres scintillantes, crée un effet de mouvement et de brillance. Avec son fermoir rectangulaire également pavé de diamants, ce bijou est parfait pour ajouter une touche de luxe contemporain et sophistiqué à n'importe quelle tenue.",
+    "stock": null,
+    "created_at": "2025-10-13T21:20:22.000Z"
+  }
+]
