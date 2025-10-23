@@ -69,16 +69,7 @@ export const products = [
     "stock": null,
     "created_at": "2025-10-08T14:24:37.000Z"
   },
-  {
-    "id": 46,
-    "name": "Collier \"Chaîne Impériale\" ",
-    "price": "$99.99",
-    "category": "collier",
-    "images": ["/uploads/46_0.jpg", "/uploads/46_1.jpg", "/uploads/46_2.jpg"],
-    "description": "Ce collier chaîne impériale est une pièce imposante qui incarne la puissance et l'élégance. Ses maillons larges et brillants créent un effet de mouvement dynamique, parfait pour affirmer votre style avec assurance.",
-    "stock": null,
-    "created_at": "2025-10-08T14:39:20.000Z"
-  },
+ 
   {
     "id": 47,
     "name": "Collier \"Tennis Chain Arc-en-Ciel",
@@ -92,7 +83,7 @@ export const products = [
   {
     "id": 74,
     "name": "Boucles d'Oreilles \"Diamant Souverain\"",
-    "price": "$99.99",
+    "price": "$99.99 - $249.99",
     "category": "boucle d'oreille",
     "images": ["/uploads/74_0.jpg", "/uploads/74_1.jpg", "/uploads/74_2.jpg", "/uploads/74_3.jpg"],
     "description": "Ces boucles d'oreilles à diamant solitaire incarnent l'élégance intemporelle, avec une touche de puissance discrète. Un diamant brillant rond, serti sur une monture en métal précieux, pour un rendu à la fois classique et audacieux. Elles ne se contentent pas de briller : elles dominent.",
@@ -212,7 +203,7 @@ export const products = [
   {
     "id": 87,
     "name": "Boucles d'Oreilles \"Fleur de Diamant\" ",
-    "price": "$129.99",
+    "price": "$179.99",
     "category": "boucle d'oreille",
     "images": ["/uploads/87_0.jpg", "/uploads/87_1.jpg"],
     "description": "Ces boucles d'oreilles en cluster de diamants  sont une célébration de l'éclat et de la symétrie. Avec leurs neuf pierres rondes brillantes disposées en forme de fleur, elles captent et diffusent la lumière à chaque mouvement, transformant vos oreilles en un foyer de scintillements. Un bijou intemporel et polyvalent, parfait pour ajouter une touche de glamour à n'importe quelle tenue.",
@@ -222,7 +213,7 @@ export const products = [
   {
     "id": 88,
     "name": "Boucles d'Oreilles \"$ Bling\" ",
-    "price": "$109.99",
+    "price": "$179.99",
     "category": "boucle d'oreille",
     "images": ["/uploads/88_0.jpg", "/uploads/88_1.jpg", "/uploads/88_2.jpg"],
     "description": "Ces boucles d'oreilles en forme de symbole dollar ($) pavé de diamants  sont un mélange audacieux d'ironie et d'élégance. Avec leur design iconique et scintillant, elles transforment un symbole universel de richesse en une œuvre de joaillerie sophistiquée. Parfaites pour celles et ceux qui aiment afficher leur succès avec panache – ou simplement ajouter une touche de provocation glamour à leur look.",
@@ -232,7 +223,7 @@ export const products = [
   {
     "id": 89,
     "name": "Boucles d'Oreilles \"Duel des Symboles\"",
-    "price": "$99.99",
+    "price": "$179.99",
     "category": "boucle d'oreille",
     "images": ["/uploads/89_0.jpg", "/uploads/89_1.jpg", "/uploads/89_2.jpg"],
     "description": "Ces boucles d'oreilles symboliques et scintillantes représentent un duel élégant entre le trèfle à quatre feuilles (symbole de chance) et le cœur (symbole d'amour), le tout enrobé d'un cadre doré pavé de diamants. Un bijou audacieux et plein de sens, parfait pour celles et ceux qui croient que la vie se joue entre le destin et les sentiments.",
@@ -242,7 +233,7 @@ export const products = [
   {
     "id": 90,
     "name": "Boucles d'Oreilles \"Cœur Micro-Pavé\"",
-    "price": "$119.99",
+    "price": "$179.99",
     "category": "boucle d'oreille",
     "images": ["/uploads/90_0.jpg", "/uploads/90_1.jpg", "/uploads/90_2.jpg"],
     "description": "Ces boucles d'oreilles en forme de cœur entièrement pavé de diamants (ou zircons) sont une déclaration d'amour et de luxe. Chaque cœur, recouvert de micro-pierres scintillantes, capte la lumière pour un effet hypnotique et romantique. Un bijou intemporel et polyvalent, parfait pour exprimer ses sentiments ou simplement ajouter une touche de glamour à son quotidien.",
@@ -252,7 +243,7 @@ export const products = [
   {
     "id": 91,
     "name": "Boucles d'Oreilles \"Croix de Lumière\" ",
-    "price": "$129.99",
+    "price": "$179.99",
     "category": "boucle d'oreille",
     "images": ["/uploads/91_0.jpg", "/uploads/91_1.jpg", "/uploads/91_2.jpg"],
     "description": "Ces boucles d'oreilles représentent une croix chrétienne pavée de diamants, suspendue à un anneau doré. Alliant foi et luxe, elles sont conçues pour celles et ceux qui souhaitent afficher leur croyance avec élégance, ou simplement ajouter une touche de symbolisme puissant à leur style.\n",
@@ -262,7 +253,7 @@ export const products = [
   {
     "id": 92,
     "name": "Boucles d'Oreilles \"Croix Étoilée\"",
-    "price": "$129.99",
+    "price": "$179.99",
     "category": "boucle d'oreille",
     "images": ["/uploads/92_0.jpg", "/uploads/92_1.jpg"],
     "description": "Ces boucles d'oreilles en forme de croix étoilée, entièrement pavées de diamants, allient tradition religieuse et design contemporain. Suspendues à un clou doré, elles apportent une touche de luxe discret et de symbolisme puissant à n'importe quelle tenue. Parfaites pour les occasions spéciales ou pour un port quotidien, elles sont le choix idéal pour ceux qui veulent affirmer leur foi avec élégance.",
@@ -282,7 +273,7 @@ export const products = [
   {
     "id": 94,
     "name": "Boucles d'Oreilles \"Halo Céleste\"",
-    "price": "$129.99",
+    "price": "$179.99",
     "category": "boucle d'oreille",
     "images": ["/uploads/94_0.jpg", "/uploads/94_1.jpg", "/uploads/94_2.jpg"],
     "description": "Ces boucles d'oreilles Halo sont un chef-d'œuvre de joaillerie, où un diamant central rond est magnifiquement encadré par un cercle de micro-diamants. Ce design intemporel et élégant crée un effet de halo lumineux, multipliant la brillance et ajoutant une dimension de luxe sophistiqué. Parfaites pour les occasions spéciales ou pour celles qui aiment porter un peu de magie au quotidien.",
@@ -302,7 +293,7 @@ export const products = [
   {
     "id": 96,
     "name": "Pendentif \"Lien Infini\" ",
-    "price": "$129.99",
+    "price": "$179.99",
     "category": "pendentif",
     "images": ["/uploads/96_0.jpg", "/uploads/96_1.jpg", "/uploads/96_2.jpg", "/uploads/96_3.jpg"],
     "description": "Ce pendentif en forme de double boucle (chiffre huit) entièrement pavé de diamants est une pièce sophistiquée et symbolique. Représentant l'infini, l'équilibre et les liens éternels, ce bijou est parfait pour celles et ceux qui veulent porter un message puissant avec élégance. Suspendu à une chaîne délicate, il apporte une touche de luxe discret et de sens profond à toute tenue.",
@@ -322,7 +313,7 @@ export const products = [
   {
     "id": 98,
     "name": "Pendentif \"Main de Fatima\"",
-    "price": "$259.99",
+    "price": "$279.99",
     "category": "pendentif",
     "images": ["/uploads/98_0.jpg", "/uploads/98_1.jpg", "/uploads/98_2.jpg"],
     "description": "Ce pendentif en forme de Main de Fatima (ou Khamsa), entièrement recouvert de diamants , est une pièce emblématique qui allie tradition et luxe moderne. Symbole de protection, de chance et de force, ce bijou est parfait pour celles et ceux qui souhaitent porter un talisman puissant tout en affichant un style élégant et sophistiqué.",
